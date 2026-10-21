@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Process",
+  "Name": "ClientHash",
+  "Description": "Robotic Enterprise Framework",
+  "MainFile": "Main.xaml"
+}
