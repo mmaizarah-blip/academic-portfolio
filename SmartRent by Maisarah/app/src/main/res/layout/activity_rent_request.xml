@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rental Request"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit your details to contact the estate agent."
+            android:textSize="15sp"
+            android:textColor="#555555"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/etRequestName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Full Name"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777" />
+
+        <EditText
+            android:id="@+id/etRequestPhone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etMoveInDate"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Move-in Date, example: 20 July 2026"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etRequestMessage"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:hint="Message"
+            android:gravity="top"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnSubmitRequest"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Submit Rental Request"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+</ScrollView>

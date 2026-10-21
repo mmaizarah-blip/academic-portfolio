@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F7F6">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activities"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#0F5F3A"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage your saved properties and rental activities."
+                android:textSize="15sp"
+                android:textColor="#666666"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btnFavourites"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="❤️ Favourite Properties"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1E7A5A"/>
+
+            <Button
+                android:id="@+id/btnRequests"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:text="📩 Rental Requests"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1E7A5A"/>
+
+            <Button
+                android:id="@+id/btnBudget"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:text="💰 Budget Analysis"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1E7A5A"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="🏠\nHome"
+            android:gravity="center"
+            android:textColor="#555555"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/navActivities"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="📋\nActivities"
+            android:gravity="center"
+            android:textColor="#0F5F3A"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="👤\nProfile"
+            android:gravity="center"
+            android:textColor="#555555"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

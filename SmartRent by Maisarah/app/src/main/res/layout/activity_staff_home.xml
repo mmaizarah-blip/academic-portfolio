@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, Landlord 🏠"
+            android:textSize="18sp"
+            android:textColor="#666666" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Landlord Dashboard"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create listings, manage tenant requests and monitor your properties."
+            android:textSize="15sp"
+            android:textColor="#777777"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="22dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="163dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_screen" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#0F5F3A"
+            android:elevation="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Landlord Portal"
+                android:textColor="#FFFFFF"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your listing performance overview"
+                android:textColor="#DFF5EA"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvLandlordStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏠 Listings: 0\n📩 Requests: 0"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="14dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Property Management"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnAddProperty"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Add New Listing"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A" />
+
+        <Button
+            android:id="@+id/btnViewProperties"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="My Properties"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnRentalRequests"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Tenant Rental Requests"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnReport"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="My Property Analytics"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#D9EDE4"
+            android:textColor="#0F5F3A"
+            android:layout_marginTop="22dp" />
+
+    </LinearLayout>
+</ScrollView>

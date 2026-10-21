@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6">
+
+    <LinearLayout
+        android:id="@+id/paymentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Analytics"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monitor landlord listing payments and ToyyibPay transactions."
+            android:textSize="15sp"
+            android:textColor="#555555"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/tvPaymentSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💰 Total Revenue: RM 0\n💳 Pending Payments: 0\n✅ Paid Payments: 0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#0F5F3A"
+            android:padding="22dp"
+            android:lineSpacingExtra="6dp"
+            android:layout_marginBottom="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Records"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginBottom="12dp" />
+
+    </LinearLayout>
+</ScrollView>

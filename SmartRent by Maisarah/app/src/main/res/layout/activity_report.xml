@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Report Dashboard"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Summary of property, listing, payment and rental status."
+            android:textSize="15sp"
+            android:textColor="#555555"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="22dp" />
+
+        <TextView
+            android:id="@+id/tvTotalProperties"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="🏠 Total Properties: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#0F5F3A" />
+
+        <TextView
+            android:id="@+id/tvAvailableProperties"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="🟢 Available Properties: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvRentedProperties"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="🔴 Rented Properties: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvReservedProperties"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="🟡 Reserved Properties: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvRentalRate"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="📊 Rental Rate: 0%"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#1E7A5A"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvPendingApproval"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="⏳ Pending Approval: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvApprovedListings"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="✅ Approved Listings: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvRejectedListings"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="❌ Rejected Listings: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvPendingPayments"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="💳 Pending Payments: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvPaidPayments"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="💰 Paid Payments: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:background="#D9EDE4"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvRevenue"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:padding="22dp"
+            android:text="💵 Total Revenue: RM 0.00"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#1E7A5A"
+            android:layout_marginTop="14dp" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChartStatus"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Properties by Type"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChartType"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rental Request Status"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChartRequest"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>

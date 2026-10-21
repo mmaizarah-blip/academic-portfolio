@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, Admin 👑"
+            android:textSize="18sp"
+            android:textColor="#555555" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Dashboard"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Control listings, payments, landlords and system reports."
+            android:textSize="15sp"
+            android:textColor="#555555"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="22dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#0F5F3A"
+            android:elevation="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System Control Center"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monitor platform activity and business operations."
+                android:textSize="14sp"
+                android:textColor="#DFF5EA"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administration"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnValidateListings"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Validate Property Listings"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A" />
+
+        <Button
+            android:id="@+id/btnViewPayments"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="View Listing Payments"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnAdminReports"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="System Reports"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnManageLandlords"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Manage Landlords"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnAdminLogout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A"
+            android:backgroundTint="#D9EDE4"
+            android:layout_marginTop="22dp" />
+
+    </LinearLayout>
+</ScrollView>

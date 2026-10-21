@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F7F6">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello 👋"
+                android:textSize="18sp"
+                android:textColor="#666666" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find Your Dream Home"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#0F5F3A"
+                android:layout_marginTop="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="🔍 Search properties by location"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:textColor="#777777"
+                android:background="#FFFFFF"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_screen"
+                android:background="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginBottom="22dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0F5F3A"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Smart Budget Analysis"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estimate your suitable property price before browsing."
+                    android:textColor="#DFF5EA"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/btnBudget"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Calculate My Budget"
+                    android:textAllCaps="false"
+                    android:textColor="#0F5F3A"
+                    android:textStyle="bold"
+                    android:backgroundTint="#FFFFFF"
+                    android:layout_marginTop="18dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Property Search"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnViewProperties"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Browse Properties"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:backgroundTint="#1E7A5A" />
+
+            <Button
+                android:id="@+id/btnFavourite"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="My Favourites"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1E7A5A"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnHelp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="How SmartRent Works"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#0F5F3A"
+                android:backgroundTint="#D9EDE4"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnAddProperty"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="🏠\nHome"
+            android:gravity="center"
+            android:textColor="#0F5F3A"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/navActivities"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="📋\nActivities"
+            android:gravity="center"
+            android:textColor="#555555"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="👤\nProfile"
+            android:gravity="center"
+            android:textColor="#555555"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

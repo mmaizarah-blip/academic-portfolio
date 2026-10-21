@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Property"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A" />
+
+        <EditText
+            android:id="@+id/etEditTitle"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Property Title"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="20dp" />
+        <ImageView
+            android:id="@+id/imgEditProperty"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="12dp"
+            android:background="#D9EDE4"
+            android:scaleType="centerCrop" />
+
+        <Button
+            android:id="@+id/btnChangeImage"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Change Property Image"
+            android:textColor="#0F5F3A"
+            android:backgroundTint="#D9EDE4"
+            android:layout_marginBottom="18dp"/>
+
+        <EditText
+            android:id="@+id/etEditLocation"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Location"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditPrice"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Price"
+            android:inputType="numberDecimal"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <Spinner
+            android:id="@+id/spEditType"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditDescription"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Description"
+            android:padding="14dp"
+            android:gravity="top"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditBedrooms"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Bedrooms"
+            android:inputType="number"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditBathrooms"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Bathrooms"
+            android:inputType="number"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditBuiltUpArea"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Built-up Area"
+            android:inputType="number"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditParking"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Parking"
+            android:inputType="number"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditAgentName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Agent Name"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditAgentPhone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Agent Phone"
+            android:inputType="phone"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <Spinner
+            android:id="@+id/spEditStatus"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etEditTourUrl"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Virtual Tour URL"
+            android:inputType="textUri"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#222222"
+            android:textColorHint="#777777"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnUpdateProperty"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Update Property"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Budget Analysis"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#0F5F3A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate your affordable property budget using salary and monthly commitments."
+            android:textSize="15sp"
+            android:textColor="#777777"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="22dp"
+            android:background="#FFFFFF"
+            android:elevation="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Financial Details"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#0F5F3A"
+                android:layout_marginBottom="14dp" />
+
+            <EditText
+                android:id="@+id/etSalary"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Monthly Salary (RM)"
+                android:inputType="numberDecimal"
+                android:textColor="#222222"
+                android:textColorHint="#777777"
+                android:padding="14dp"
+                android:background="#F5F7F6" />
+
+            <EditText
+                android:id="@+id/etCommitment"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Monthly Commitment (RM)"
+                android:inputType="numberDecimal"
+                android:padding="14dp"
+                android:textColor="#222222"
+                android:textColorHint="#777777"
+                android:background="#F5F7F6"
+                android:layout_marginTop="14dp" />
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Calculate Budget"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1E7A5A"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your budget result will appear here."
+            android:textSize="17sp"
+            android:textColor="#0F5F3A"
+            android:background="#DFF5EA"
+            android:padding="20dp"
+            android:layout_marginTop="22dp" />
+
+        <Button
+            android:id="@+id/btnViewSuitable"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="View Suitable Properties"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E7A5A"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

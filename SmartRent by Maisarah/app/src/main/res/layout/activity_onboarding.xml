@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6"
+    android:orientation="vertical"
+    android:padding="28dp">
+
+    <TextView
+        android:id="@+id/tvStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1 of 5"
+        android:textColor="#1E7A5A"
+        android:textStyle="bold"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Smart Budget Analysis"
+        android:textColor="#0F5F3A"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/tvIcon"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="💰"
+        android:textSize="90sp"
+        android:gravity="center"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use your monthly salary and commitments to calculate your suggested property budget."
+        android:textColor="#333333"
+        android:textSize="17sp"
+        android:lineSpacingExtra="6dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tvDots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="● ○ ○ ○ ○"
+        android:textColor="#0F5F3A"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:layout_marginTop="34dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#1E7A5A" />
+
+    <Button
+        android:id="@+id/btnSkip"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Skip"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="#0F5F3A"
+        android:backgroundTint="#D9EDE4"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>
