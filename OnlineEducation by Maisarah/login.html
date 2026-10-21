@@ -1,0 +1,414 @@
+<?php
+
+session_start();
+
+include "db.php";
+
+if(isset($_POST['login']))
+{
+	$username = $_POST['username'];
+
+	$password = $_POST['password'];
+
+	$sql =
+	"SELECT *
+	FROM users
+	WHERE username='$username'";
+
+	$result = $conn->query($sql);
+
+	if($result->num_rows > 0)
+	{
+		$user = $result->fetch_assoc();
+
+		if(password_verify($password,$user['password']))
+		{
+			$_SESSION['user_code'] =
+			$user['user_code'];
+
+			$_SESSION['username'] =
+			$user['username'];
+
+			$_SESSION['email'] =
+			$user['email'];
+
+			$email = $user['email'];
+
+			if
+			(
+				strpos
+				(
+					$email,
+					"@OneStepAhead.admin.com.my"
+				)
+				!== false
+			)
+			{
+				echo
+				"<script>
+
+				alert('Admin Login Successful');
+
+				window.location.href=
+				'A_home.php';
+
+				</script>";
+			}
+
+			else if
+			(
+				strpos
+				(
+					$email,
+					"@OneStepAhead.instructor.com.my"
+				)
+				!== false
+			)
+			{
+				echo
+				"<script>
+
+				alert('Instructor Login Successful');
+
+				window.location.href=
+				'I_home.php';
+
+				</script>";
+			}
+
+			else
+			{
+				echo
+				"<script>
+
+				alert('Student Login Successful');
+
+				window.location.href=
+				'home.php';
+
+				</script>";
+			}
+		}
+
+		else
+		{
+			echo
+			"<script>
+
+			alert('Wrong Password');
+
+			</script>";
+		}
+	}
+
+	else
+	{
+		echo
+		"<script>
+
+		alert('Username Not Found');
+
+		</script>";
+	}
+}
+
+?>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login</title>
+
+    <style>
+
+        *
+        {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body
+        {
+            font-family:'Segoe UI', Arial, sans-serif;
+            background:#f0f2f5;
+        }
+
+        .main-container
+        {
+            display:flex;
+            width:100%;
+            height:100vh;
+        }
+
+        .left
+        {
+            flex:1;
+
+            background:
+            linear-gradient
+            (
+                135deg,
+                #a1c4fd 0%,
+                #c2e9fb 50%,
+                #fbc2eb 100%
+            );
+
+            display:flex;
+            flex-direction:column;
+
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+
+            padding:40px;
+        }
+
+        .logo
+        {
+            width:260px;
+            height:260px;
+
+            object-fit:contain;
+
+            background:white;
+
+            border-radius:50%;
+
+            padding:20px;
+
+            margin-bottom:30px;
+
+            box-shadow:
+            0 10px 25px
+            rgba(0,0,0,0.1);
+        }
+
+        .left h1
+        {
+            color:black;
+            font-size:35px;
+        }
+
+        .left h2
+        {
+            color:#222;
+            font-size:45px;
+            margin-bottom:15px;
+        }
+
+        .left p
+        {
+            color:#444;
+            font-size:18px;
+            font-style:italic;
+        }
+
+        .right
+        {
+            flex:1;
+
+            display:flex;
+
+            justify-content:center;
+            align-items:center;
+
+            padding:40px;
+        }
+
+        .container
+        {
+            width:420px;
+
+            background:white;
+
+            padding:45px 40px;
+
+            border-radius:20px;
+
+            box-shadow:
+            0 15px 35px
+            rgba(0,0,0,0.1);
+        }
+
+        .container h1
+        {
+            text-align:center;
+
+            margin-bottom:30px;
+
+            color:#667eea;
+        }
+
+        input[type="text"],
+        input[type="password"]
+        {
+            width:100%;
+
+            padding:14px;
+
+            margin-top:8px;
+            margin-bottom:20px;
+
+            border:1px solid #ddd;
+
+            border-radius:8px;
+
+            font-size:16px;
+        }
+
+        input:focus
+        {
+            outline:none;
+
+            border-color:#667eea;
+        }
+
+        label
+        {
+            display:flex;
+            align-items:center;
+            gap:5px;
+        }
+
+        button
+        {
+            width:100%;
+
+            padding:14px;
+
+            background:#007bff;
+
+            color:white;
+
+            border:none;
+
+            border-radius:8px;
+
+            cursor:pointer;
+
+            font-size:18px;
+        }
+
+        button:hover
+        {
+            background:#0056b3;
+        }
+
+        p
+        {
+            text-align:center;
+            margin-top:20px;
+        }
+
+        a
+        {
+            text-decoration:none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <div class="left">
+
+        <img src="Logo.png" class="logo">
+
+        <h1>Welcome to</h1>
+
+        <h2>OneStepAhead Sdn.Bhd.</h2>
+
+        <p>Your Journey Starts Here</p>
+
+    </div>
+
+    <div class="right">
+
+        <div class="container">
+
+            <h1>LOGIN</h1>
+
+            <form method="POST">
+
+                Username:<br>
+
+                <input
+                type="text"
+                name="username"
+                required>
+
+                Password:<br>
+
+                <input
+                type="password"
+                id="pass"
+                name="password"
+                required>
+
+                <label>
+
+                    <input
+                    type="checkbox"
+                    onclick="showPass()">
+
+                    Show Password
+
+                </label>
+
+                <br><br>
+
+                <button
+                type="submit"
+                name="login">
+
+                    LOGIN
+
+                </button>
+
+            </form>
+
+            <p>
+
+                Don't have an account?
+
+                <a href="register.php">
+
+                    Register
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function showPass()
+{
+	var x =
+	document.getElementById("pass");
+
+	if(x.type == "password")
+	{
+		x.type = "text";
+	}
+	else
+	{
+		x.type = "password";
+	}
+}
+
+</script>
+
+</body>
+</html>

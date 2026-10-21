@@ -1,0 +1,73 @@
+.sidebar {
+    width: 270px;
+    background: #1E3A5F;
+    color: white;
+    padding: 25px 20px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.logoBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.logoBox img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+}
+
+.logoBox h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+}
+
+.logoBox p {
+    font-size: 0.65rem;
+    opacity: 0.8;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: #2B5B84;
+}
+
+.nav a i {
+    width: 25px;
+    font-size: 1.1rem;
+}
+
+.quoteBox {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.1);
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}

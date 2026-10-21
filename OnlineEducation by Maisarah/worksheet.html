@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Worksheet</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container
+        {
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+
+            box-shadow: 0px 0px 10px lightgray;
+        }
+
+        h2
+        {
+            margin-bottom: 30px;
+        }
+
+        .answer
+        {
+            display: block;
+
+            width: 200px;
+            margin: 10px auto;
+            padding: 12px;
+
+            border: none;
+            border-radius: 30px;
+
+            background-color: #e6e6e6;
+            cursor: pointer;
+
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .answer:hover
+        {
+            transform: scale(1.03);
+        }
+
+        .correct
+        {
+            background-color: #8cff8c;
+        }
+
+        .wrong
+        {
+            filter: blur(3px);
+            opacity: 0.6;
+        }
+
+        #result
+        {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        #points
+        {
+            margin-top: 15px;
+            font-size: 18px;
+            color: green;
+        }
+
+        .help
+        {
+            margin-top: 25px;
+        }
+
+        .help a
+        {
+            text-decoration: none;
+            color: blue;
+        }
+
+        button
+        {
+            cursor: pointer;
+        }
+
+        #nextBtn, #startBtn
+        {
+            margin-top: 20px;
+
+            padding: 12px 20px;
+
+            border: none;
+            border-radius: 10px;
+
+            background-color: #4CAF50;
+            color: white;
+
+            font-size: 16px;
+        }
+
+        #nextBtn
+        {
+            display: none;
+        }
+
+        #quizPage
+        {
+            display: none;
+        }
+
+        #videoPopup
+        {
+            display: none;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .popupContent
+        {
+            background: white;
+
+            width: 70%;
+            margin: 80px auto;
+
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        iframe
+        {
+            width: 100%;
+            height: 400px;
+        }
+
+        .closeBtn
+        {
+            margin-top: 15px;
+            padding: 10px 20px;
+
+            border: none;
+            background: red;
+            color: white;
+
+            border-radius: 10px;
+        }
+		#videoPopup
+		{
+			display: none;
+
+			position: fixed;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+
+			background-color: rgba(0,0,0,0.7);
+		}
+
+		.popupContent
+		{
+			position: relative;
+
+			background: white;
+
+			width: 70%;
+			margin: 50px auto;
+
+			padding: 20px;
+
+			border-radius: 20px;
+		}
+
+		#videoFrame
+		{
+			width: 100%;
+			border-radius: 15px;
+		}
+
+		.closeTop
+		{
+			position: absolute;
+
+			top: 15px;
+			right: 20px;
+
+			font-size: 28px;
+			font-weight: bold;
+
+			cursor: pointer;
+
+			color: red;
+		}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- START PAGE -->
+
+    <div class="container" id="startPage">
+
+        <h1>Worksheet Quiz</h1>
+
+        <p>Test your math skills!</p>
+
+        <button id="startBtn" onclick="startQuiz()">
+            Start Question
+        </button>
+
+    </div>
+
+    <!-- QUIZ PAGE -->
+
+    <div class="container" id="quizPage">
+
+        <div id="points">
+            Total Points: 0
+        </div>
+
+        <h2 id="question">
+            5 + x = 8
+        </h2>
+
+        <div id="answers">
+
+            <button class="answer" onclick="checkAnswer(this, 3)">
+                x = 3
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, 2)">
+                x = 2
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, 5)">
+                x = 5
+            </button>
+
+            <button class="answer" onclick="checkAnswer(this, 8)">
+                x = 8
+            </button>
+
+        </div>
+
+        <div id="result"></div>
+
+        <div class="help" id="helpSection" style="display: none;">
+			<a href="#" onclick="openVideo()">Need Help?</a>
+		</div>
+
+        <button id="nextBtn" onclick="nextQuestion()">
+            Next Question
+        </button>
+
+    </div>
+
+    <!-- VIDEO POPUP -->
+
+
+	<div id="videoPopup">
+
+		<div class="popupContent">
+
+			<span class="closeTop" onclick="closeVideo()">
+				✖
+			</span>
+
+			<h2>Explanation Video</h2>
+
+			<video id="videoFrame" controls>
+
+				<source id="videoSource" src="" type="video/mp4">
+
+			</video>
+
+		</div>
+
+	</div>
+
+    <script>
+
+        let totalPoints = 0;
+
+        let currentQuestion = 0;
+
+        let questions = [
+
+            {
+                question: "5 + x = 8",
+
+                correct: 3,
+				
+				video: "q1.mp4",
+
+                answers: [
+                    "x = 3",
+                    "x = 2",
+                    "x = 5",
+                    "x = 8"
+                ]
+            },
+
+
+
+            {
+                question: "7 × 6 = x",
+
+                correct: 42,
+				
+				video: "q2.mp4",
+
+                answers: [
+                    "x = 36",
+                    "x = 42",
+                    "x = 49",
+                    "x = 70"
+                ]
+            },
+			
+			{ 
+				question: " 81 ÷ 9 = x",
+			
+				correct: 9,
+				
+				video: "q3.mp4",
+			  
+				answers: [
+				"x = 6",
+				"x = 7",
+				"x = 8",
+				"x = 9"
+				
+				]
+			}
+
+        ];
+
+
+
+
+
+        function startQuiz()
+        {
+            document.getElementById("startPage").style.display = "none";
+
+            document.getElementById("quizPage").style.display = "block";
+        }
+
+
+
+
+
+        function checkAnswer(button, answer)
+        {
+            let result = document.getElementById("result");
+
+            let points = document.getElementById("points");
+
+            let nextBtn = document.getElementById("nextBtn");
+
+            let buttons = document.querySelectorAll(".answer");
+
+
+
+            buttons.forEach(function(btn)
+            {
+                let text = btn.innerHTML;
+
+                if(text.includes("x = " + questions[currentQuestion].correct))
+                {
+                    btn.classList.add("correct");
+                }
+
+                else
+                {
+                    btn.classList.add("wrong");
+                }
+
+                btn.disabled = true;
+            });
+
+
+
+
+
+            if(answer == questions[currentQuestion].correct)
+            {
+                result.innerHTML = "Correct!";
+                result.style.color = "green";
+
+                totalPoints += 500;
+            }
+
+            else
+            {
+                result.innerHTML =
+                "Wrong! Correct answer is x = "
+                + questions[currentQuestion].correct;
+
+                result.style.color = "red";
+            }
+
+
+
+            points.innerHTML =
+            "Total Points: " + totalPoints;
+
+
+			document.getElementById("helpSection").style.display = "block";
+            nextBtn.style.display = "inline-block";
+        }
+
+
+
+
+
+        function nextQuestion()
+        {
+            currentQuestion++;
+
+            if(currentQuestion >= questions.length)
+			{
+				document.getElementById("quizPage").innerHTML =
+
+				"<h1>Quiz Finished!</h1>" +
+
+				"<h2>Your Total Score: "
+				+ totalPoints +
+				"</h2>" +
+
+				"<br><br>" +
+
+				"<button onclick='restartQuiz()' " +
+				"style='padding:12px 20px; margin-right:10px; border:none; border-radius:10px; background-color:#4CAF50; color:white; cursor:pointer;'>"
+				+
+				"Stay In Worksheet" +
+				"</button>" +
+
+
+				"<button onclick=\"window.location.href='home.html'\" " +
+				"style='padding:12px 20px; border:none; border-radius:10px; background-color:#2196F3; color:white; cursor:pointer;'>"
+				+
+				"Return To Home" +
+				"</button>";
+
+				return;
+			}
+
+
+
+            let q = questions[currentQuestion];
+
+
+
+            document.getElementById("question").innerHTML =
+            q.question;
+
+
+
+            let answerButtons =
+            document.querySelectorAll(".answer");
+
+
+
+            for(let i = 0; i < answerButtons.length; i++)
+            {
+                answerButtons[i].innerHTML =
+                q.answers[i];
+
+                answerButtons[i].disabled = false;
+
+                answerButtons[i].classList.remove("correct");
+                answerButtons[i].classList.remove("wrong");
+
+
+
+                let value =
+                parseInt(
+                    q.answers[i].replace("x = ", "")
+                );
+
+
+
+                answerButtons[i].setAttribute
+                (
+                    "onclick",
+                    "checkAnswer(this, " + value + ")"
+                );
+            }
+
+
+
+            document.getElementById("result").innerHTML =
+            "";
+
+
+
+            document.getElementById("nextBtn").style.display =
+            "none";
+			
+			document.getElementById("helpSection").style.display = "none";
+        }
+		function restartQuiz()
+		{
+			location.reload();
+		}
+
+
+       function openVideo()
+		{
+			document.getElementById("videoPopup").style.display =
+			"block";
+
+			let video =
+			document.getElementById("videoFrame");
+
+			let source =
+			document.getElementById("videoSource");
+
+			source.src =
+			questions[currentQuestion].video;
+
+			video.load();
+
+			video.play();
+		}
+
+
+
+		function closeVideo()
+		{
+			document.getElementById("videoPopup").style.display =
+			"none";
+
+			document.getElementById("videoFrame").pause();
+		}
+
+    </script>
+
+</body>
+</html>

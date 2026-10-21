@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            display: flex;
+            background-color: #f2f2f2;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: purple;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a,
+        .dropbtn {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover,
+        .dropbtn:hover {
+            background-color: darkviolet;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #7a1fa2;
+        }
+
+        .dropdown-content a {
+            padding-left: 40px;
+            font-size: 15px;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .welcome-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .welcome-box h1 {
+            color: purple;
+            margin-bottom: 15px;
+        }
+
+        .welcome-box p {
+            color: gray;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin</h2>
+
+    <div class="dropdown">
+        <button class="dropbtn" id="studentBtn" onclick="toggleStudent()">
+            Student <span id="studentArrow">▼</span>
+        </button>
+        <div class="dropdown-content" id="studentMenu">
+            <a href="s_profile.php">Profile</a>
+            <a href="#">Progress</a>
+            <a href="a_leaderboard.php">Leaderboard</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" id="instructorBtn" onclick="toggleInstructor()">
+            Instructor <span id="instructorArrow">▼</span>
+        </button>
+        <div class="dropdown-content" id="instructorMenu">
+            <a href="i_profile.php">Profile</a>
+        </div>
+    </div>
+
+    <a href="a_profile.php">Profile</a>
+</div>
+
+<div class="main-content">
+    <div class="welcome-box">
+        <h1>Welcome, Admin!</h1>
+        <p>Manage student and instructor information using the sidebar menu.</p>
+    </div>
+</div>
+
+<script>
+    // Function untuk buka dropdown ikut nama (student / instructor)
+    function openDropdown(which) {
+        var studentMenu = document.getElementById("studentMenu");
+        var instructorMenu = document.getElementById("instructorMenu");
+        var studentArrow = document.getElementById("studentArrow");
+        var instructorArrow = document.getElementById("instructorArrow");
+
+        if (which === "student") {
+            studentMenu.style.display = "block";
+            studentArrow.innerHTML = "▲";
+            instructorMenu.style.display = "none";
+            instructorArrow.innerHTML = "▼";
+            localStorage.setItem("openDropdown", "student");
+        } else if (which === "instructor") {
+            instructorMenu.style.display = "block";
+            instructorArrow.innerHTML = "▲";
+            studentMenu.style.display = "none";
+            studentArrow.innerHTML = "▼";
+            localStorage.setItem("openDropdown", "instructor");
+        } else {
+            // tutup semua
+            studentMenu.style.display = "none";
+            studentArrow.innerHTML = "▼";
+            instructorMenu.style.display = "none";
+            instructorArrow.innerHTML = "▼";
+            localStorage.setItem("openDropdown", "none");
+        }
+    }
+
+    function toggleStudent() {
+        var menu = document.getElementById("studentMenu");
+        if (menu.style.display === "block") {
+            openDropdown("none");
+        } else {
+            openDropdown("student");
+        }
+    }
+
+    function toggleInstructor() {
+        var menu = document.getElementById("instructorMenu");
+        if (menu.style.display === "block") {
+            openDropdown("none");
+        } else {
+            openDropdown("instructor");
+        }
+    }
+
+    // Bila page load, baca dari localStorage dan buka dropdown yang tersimpan
+    window.onload = function() {
+        var saved = localStorage.getItem("openDropdown");
+        if (saved === "student") {
+            openDropdown("student");
+        } else if (saved === "instructor") {
+            openDropdown("instructor");
+        } else {
+            openDropdown("none");
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>Admin Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            display: flex;
+            background-color: #f2f2f2;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: purple;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a,
+        .dropbtn {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover,
+        .dropbtn:hover {
+            background-color: darkviolet;
+        }
+
+        /* DROPDOWN */
+        .dropdown-content {
+            display: none;
+            background-color: #7a1fa2;
+        }
+
+        .dropdown-content a {
+            padding-left: 40px;
+            font-size: 15px;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .welcome-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .welcome-box h1 {
+            color: purple;
+            margin-bottom: 15px;
+        }
+
+        .welcome-box p {
+            color: gray;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin</h2>
+
+    <div class="dropdown">
+        <button class="dropbtn" id="studentBtn" onclick="toggleStudent()">
+            Student <span id="studentArrow">▼</span>
+        </button>
+        <div class="dropdown-content" id="studentMenu">
+            <a href="s_profile.php">Profile</a>
+            <a href="#">Progress</a>
+            <a href="#">Leaderboard</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" id="instructorBtn" onclick="toggleInstructor()">
+            Instructor <span id="instructorArrow">▼</span>
+        </button>
+        <div class="dropdown-content" id="instructorMenu">
+            <a href="i_profile.php">Profile</a>
+        </div>
+    </div>
+
+    <a href="a_profile.php">Profile</a>
+</div>
+
+<div class="main-content">
+    <div class="welcome-box">
+        <h1>Welcome, Admin!</h1>
+        <p>Manage student and instructor information using the sidebar menu.</p>
+    </div>
+</div>
+
+<script>
+    function toggleStudent() {
+        var menu = document.getElementById("studentMenu");
+        var arrow = document.getElementById("studentArrow");
+        
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+            arrow.innerHTML = "▼";  // down arrow
+        } else {
+            // close instructor menu first
+            document.getElementById("instructorMenu").style.display = "none";
+            document.getElementById("instructorArrow").innerHTML = "▼";
+            
+            menu.style.display = "block";
+            arrow.innerHTML = "▲";  // up arrow when open
+        }
+    }
+
+    function toggleInstructor() {
+        var menu = document.getElementById("instructorMenu");
+        var arrow = document.getElementById("instructorArrow");
+        
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+            arrow.innerHTML = "▼";
+        } else {
+            // close student menu first
+            document.getElementById("studentMenu").style.display = "none";
+            document.getElementById("studentArrow").innerHTML = "▼";
+            
+            menu.style.display = "block";
+            arrow.innerHTML = "▲";
+        }
+    }
+</script>
+
+</body>
+</html> -->

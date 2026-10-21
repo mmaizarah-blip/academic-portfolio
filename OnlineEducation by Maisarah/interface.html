@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Step Ahead | Pendidikan Matematik & Sains Percuma</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    background: linear-gradient(135deg, #f0f7f4 0%, #ffffff 100%);
+    color: #1e2a3e;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: rgba(255,255,255,0.98);
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(44,122,94,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.logo-img img {
+    height: 55px;
+}
+
+.logo-text h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f3b2c;
+}
+
+.logo-text p {
+    font-size: 0.7rem;
+    color: #5b6e8c;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    color: #2c7a5e;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-outline,
+.btn-primary-nav {
+    padding: 9px 24px;
+    border-radius: 40px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-outline {
+    border: 1.5px solid #2c7a5e;
+    color: #2c7a5e;
+}
+
+.btn-outline:hover {
+    background: #2c7a5e;
+    color: white;
+}
+
+.btn-primary-nav {
+    background: #2c7a5e;
+    color: white;
+}
+
+.btn-primary-nav:hover {
+    background: #1f5e48;
+}
+
+/* HERO */
+.hero-split {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+
+.hero-left,
+.hero-right {
+    flex: 1;
+    min-width: 280px;
+}
+
+.student-image-wrapper {
+    background: linear-gradient(145deg, #e8f3ef, #d4ede6);
+    border-radius: 48px;
+    padding: 24px;
+    box-shadow: 0 25px 40px -15px rgba(0,0,0,0.12);
+}
+
+.student-image-wrapper img {
+    width: 100%;
+    border-radius: 32px;
+}
+
+.badge-free {
+    display: inline-block;
+    background: #dff3ec;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #2c7a5e;
+    margin-bottom: 24px;
+}
+
+.hero-right h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0f3b2c;
+    margin-bottom: 12px;
+}
+
+.hero-right h2 {
+    font-size: 1.8rem;
+    color: #1e2a3e;
+    margin-bottom: 20px;
+}
+
+.hero-right p {
+    color: #4a5b6e;
+    margin-bottom: 28px;
+    font-size: 1rem;
+}
+
+.btn-start-learning {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #2c7a5e, #1f5e48);
+    padding: 14px 38px;
+    border-radius: 60px;
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(44,122,94,0.3);
+    margin-bottom: 35px;
+}
+
+.feature-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.chip {
+    background: #f1f5f9;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2d4a6e;
+}
+
+.chip i {
+    color: #2c7a5e;
+    margin-right: 8px;
+}
+
+/* STATS */
+.stats-section {
+    padding: 50px 0;
+    background: white;
+    border-top: 1px solid #eef2f5;
+    border-bottom: 1px solid #eef2f5;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #2c7a5e;
+}
+
+.stat-item p {
+    color: #5b6e8c;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* GENERAL SECTION */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0f3b2c;
+    margin-bottom: 12px;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #2c7a5e, #5bc0be);
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
+
+.section-sub {
+    text-align: center;
+    color: #5a6e7c;
+    margin-bottom: 48px;
+}
+
+/* COURSES */
+.subjects {
+    padding: 70px 0;
+    background: #fafcff;
+    scroll-margin-top: 80px;
+}
+
+.subject-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 32px;
+    padding: 32px 28px;
+    width: 330px;
+    text-align: center;
+    border: 1px solid #e2edf2;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(44,122,94,0.08);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    color: #2c7a5e;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #5b6e8c;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.topic-list {
+    text-align: left;
+    background: #f8fafc;
+    padding: 16px 20px;
+    border-radius: 24px;
+}
+
+.topic-list ul {
+    list-style: none;
+}
+
+.topic-list li {
+    margin: 10px 0;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topic-list i {
+    color: #2c7a5e;
+}
+
+/* PLATFORM PREVIEW */
+.preview-section {
+    padding: 75px 0;
+    background: white;
+    scroll-margin-top: 80px;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.preview-card {
+    background: #f8fafc;
+    border: 1px solid #e2edf2;
+    border-radius: 28px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.preview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(44,122,94,0.1);
+}
+
+.preview-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-bottom: 1px solid #e2edf2;
+}
+
+.preview-content {
+    padding: 24px;
+}
+
+.preview-content h3 {
+    color: #0f3b2c;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.preview-content p {
+    color: #5b6e8c;
+    font-size: 0.9rem;
+}
+
+/* HOW IT WORKS */
+.how-section {
+    padding: 70px 0;
+    background: #fafcff;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.step {
+    background: white;
+    border-radius: 25px;
+    padding: 28px 18px;
+    text-align: center;
+    border: 1px solid #e2edf2;
+}
+
+.step-icon {
+    width: 55px;
+    height: 55px;
+    background: #dff3ec;
+    color: #2c7a5e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    font-size: 1.5rem;
+}
+
+.step h4 {
+    color: #0f3b2c;
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #5b6e8c;
+    font-size: 0.85rem;
+}
+
+/* ABOUT */
+.about-section {
+    padding: 70px 0;
+    background: white;
+    scroll-margin-top: 80px;
+}
+
+.about-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    background: #f8fafc;
+    border-radius: 28px;
+    padding: 32px 24px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #e2edf2;
+}
+
+.about-card i {
+    font-size: 2.5rem;
+    color: #2c7a5e;
+    margin-bottom: 16px;
+}
+
+.about-card h4 {
+    font-size: 1.3rem;
+    color: #0f3b2c;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: #5b6e8c;
+    font-size: 0.9rem;
+}
+
+/* CTA */
+.cta-section {
+    padding: 70px 0;
+    background: linear-gradient(135deg, #2c7a5e, #0f3b2c);
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.1rem;
+    margin-bottom: 12px;
+}
+
+.cta-section p {
+    margin-bottom: 28px;
+    color: #dff3ec;
+}
+
+.cta-btn {
+    background: white;
+    color: #2c7a5e;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* CONTACT */
+.contact-section {
+    padding: 70px 0;
+    background: #fafcff;
+    scroll-margin-top: 80px;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 28px;
+    padding: 28px 32px;
+    width: 260px;
+    text-align: center;
+    border: 1px solid #e2edf2;
+}
+
+.contact-card i {
+    font-size: 2.2rem;
+    color: #2c7a5e;
+    margin-bottom: 16px;
+}
+
+.contact-card h4 {
+    color: #0f3b2c;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #5b6e8c;
+    font-size: 0.85rem;
+}
+
+footer {
+    background: #0f2d24;
+    color: #b8d9ce;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .preview-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-split {
+        flex-direction: column;
+    }
+
+    .nav-inner {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="container nav-inner">
+
+        <div class="logo-area" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">
+            <div class="logo-img">
+                <img src="logo.png" alt="Logo One Step Ahead">
+            </div>
+
+            <div class="logo-text">
+                <h2>One Step Ahead</h2>
+                <p>Sekolah Rendah Malaysia</p>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</a></li>
+            <li><a onclick="document.getElementById('courses-section').scrollIntoView({behavior:'smooth'})">Courses</a></li>
+            <li><a onclick="document.getElementById('preview-section').scrollIntoView({behavior:'smooth'})">Platform</a></li>
+            <li><a onclick="document.getElementById('about-section').scrollIntoView({behavior:'smooth'})">About Us</a></li>
+            <li><a onclick="document.getElementById('contact-section').scrollIntoView({behavior:'smooth'})">Contact</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+            <a href="signup.php" class="btn-outline">Sign Up</a>
+            <a href="login.php" class="btn-primary-nav">Login</a>
+        </div>
+
+    </div>
+</div>
+
+<section id="home">
+    <div class="container">
+        <div class="hero-split">
+
+            <div class="hero-left">
+                <div class="student-image-wrapper">
+                    <img src="student.png" alt="Student learning">
+                </div>
+            </div>
+
+            <div class="hero-right">
+                
+
+                <h1>Pendidikan Matematik & Sains</h1>
+                <h2>Percuma untuk Murid Sekolah Rendah Malaysia</h2>
+
+                <p>
+                    Belajar dengan cara yang menyenangkan melalui video, kuiz interaktif dan latihan berkualiti.
+                    Khas untuk anak-anak Darjah 1 hingga 6.
+                </p>
+
+                <a href="login.php" class="btn-start-learning">
+                    <i class="fas fa-rocket"></i>
+                    Mulakan Pembelajaran
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <div class="feature-chips">
+                    <div class="chip"><i class="fas fa-calculator"></i> Latihan Matematik</div>
+                    <div class="chip"><i class="fas fa-flask"></i> Eksperimen Sains</div>
+                    <div class="chip"><i class="fas fa-gamepad"></i> Kuiz Interaktif</div>
+                    <div class="chip"><i class="fas fa-video"></i> Video Pembelajaran</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container stats-grid">
+        <div class="stat-item">
+            <h3>1000+</h3>
+            <p>MURID BERMANFAAT</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>100+</h3>
+            <p>VIDEO BERKUALITI</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>AKSES PERCUMA</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>Darjah 1-6</h3>
+            <p>TAHAP PENDIDIKAN</p>
+        </div>
+    </div>
+</section>
+
+<section id="courses-section" class="subjects">
+    <div class="container">
+        <h2 class="section-title">📚 Subjek Teras Kami</h2>
+        <div class="section-sub">Matematik & Sains untuk Darjah 1 hingga 6.</div>
+
+        <div class="subject-cards">
+
+            <div class="card">
+                <div class="card-icon">📐🧮</div>
+                <h3>Matematik</h3>
+                <p>Asas penting untuk kecemerlangan akademik.</p>
+
+                <div class="topic-list">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Nombor & Operasi Asas</li>
+                        <li><i class="fas fa-check-circle"></i> Pecahan & Perpuluhan</li>
+                        <li><i class="fas fa-check-circle"></i> Wang & Masa</li>
+                        <li><i class="fas fa-check-circle"></i> Ruang dan Bentuk</li>
+                        <li><i class="fas fa-check-circle"></i> Data & Graf</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔬🧪</div>
+                <h3>Sains</h3>
+                <p>Terokai alam dengan cara yang menyeronokkan.</p>
+
+                <div class="topic-list">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Proses Hidup</li>
+                        <li><i class="fas fa-check-circle"></i> Benda Hidup & Bukan Hidup</li>
+                        <li><i class="fas fa-check-circle"></i> Cahaya & Bunyi</li>
+                        <li><i class="fas fa-check-circle"></i> Elektrik & Magnet</li>
+                        <li><i class="fas fa-check-circle"></i> Alam Sekitar</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="preview-section" class="preview-section">
+    <div class="container">
+
+        <h2 class="section-title">🚀 Explore Our Platform</h2>
+        <div class="section-sub">
+            Lihat pengalaman pembelajaran yang menanti selepas murid log masuk.
+        </div>
+
+        <div class="preview-grid">
+
+            <div class="preview-card">
+                <img src="dashboard-preview.png" alt="Student Dashboard Preview">
+                <div class="preview-content">
+                    <h3>Student Dashboard</h3>
+                    <p>
+                        Paparan utama yang memudahkan murid memilih standard, subjek, worksheet,
+                        video pembelajaran dan melihat pencapaian.
+                    </p>
+                </div>
+            </div>
+
+            <div class="preview-card">
+                <img src="worksheet-preview.png" alt="Worksheet Preview">
+                <div class="preview-content">
+                    <h3>Interactive Worksheets</h3>
+                    <p>
+                        Murid boleh memilih misi Matematik atau Sains, menjawab soalan dan mengumpul stars
+                        sebagai ganjaran pembelajaran.
+                    </p>
+                </div>
+            </div>
+
+            <div class="preview-card">
+                <img src="progress-preview.png" alt="Progress Preview">
+                <div class="preview-content">
+                    <h3>Progress Tracking</h3>
+                    <p>
+                        Sistem memaparkan jumlah stars, percubaan, jawapan betul dan ketepatan murid
+                        untuk membantu pemantauan prestasi.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="how-section">
+    <div class="container">
+
+        <h2 class="section-title">✨ Cara Sistem Berfungsi</h2>
+        <div class="section-sub">
+            Pembelajaran menjadi lebih mudah dalam beberapa langkah.
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                <h4>1. Sign Up</h4>
+                <p>Murid mendaftar akaun terlebih dahulu.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-right-to-bracket"></i></div>
+                <h4>2. Login</h4>
+                <p>Murid log masuk untuk mengakses sistem.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-video"></i></div>
+                <h4>3. Watch Lessons</h4>
+                <p>Murid menonton video pembelajaran.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-pen"></i></div>
+                <h4>4. Complete Quiz</h4>
+                <p>Murid menjawab worksheet interaktif.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                <h4>5. Track Progress</h4>
+                <p>Prestasi murid dipaparkan dalam laporan.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="about-section" class="about-section">
+    <div class="container">
+
+        <h2 class="section-title">🌟 Tentang Kami</h2>
+        <div class="section-sub">One Step Ahead - Pendidikan Percuma untuk Semua.</div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+                <i class="fas fa-bullseye"></i>
+                <h4>Misi Kami</h4>
+                <p>
+                    Memberikan akses pendidikan Matematik & Sains berkualiti secara percuma kepada
+                    setiap murid sekolah rendah.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <i class="fas fa-chalkboard-user"></i>
+                <h4>Kaedah Pengajaran</h4>
+                <p>
+                    Video pembelajaran, kuiz interaktif dan latihan yang membantu murid memahami topik.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <i class="fas fa-users"></i>
+                <h4>Untuk Siapa?</h4>
+                <p>
+                    Sesuai untuk murid Darjah 1 hingga 6, guru dan ibu bapa.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Start Learning?</h2>
+        <p>Mulakan pembelajaran Matematik & Sains dengan One Step Ahead hari ini.</p>
+        <a href="signup.php" class="cta-btn">Sign Up Now</a>
+    </div>
+</section>
+
+<section id="contact-section" class="contact-section">
+    <div class="container">
+
+        <h2 class="section-title">📞 Hubungi Kami</h2>
+        <div class="section-sub">Kami sedia membantu anda.</div>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Alamat</h4>
+                <p>Petaling Jaya, Malaysia</p>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Telefon</h4>
+                <p>+603 1234 5678</p>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Emel</h4>
+                <p>sekolahrendah@onestepahead.edu.my</p>
+            </div>
+
+            <div class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <h4>WhatsApp</h4>
+                <p>018-888 7654</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 One Step Ahead | Pendidikan Matematik & Sains PERCUMA untuk Sekolah Rendah Malaysia</p>
+        <p style="margin-top: 8px;">📞 +603 1234 5678 | ✉️ sekolahrendah@onestepahead.edu.my</p>
+    </div>
+</footer>
+
+<script>
+const sections = [
+    { id: 'home', name: 'Home' },
+    { id: 'courses-section', name: 'Courses' },
+    { id: 'preview-section', name: 'Platform' },
+    { id: 'about-section', name: 'About Us' },
+    { id: 'contact-section', name: 'Contact' }
+];
+
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.scrollY + 150;
+
+    for(const section of sections) {
+        const element = document.getElementById(section.id);
+
+        if(element) {
+            const top = element.offsetTop;
+            const height = element.clientHeight;
+
+            if(scrollPos >= top && scrollPos < top + height) {
+                current = section.name;
+                break;
+            }
+        }
+    }
+
+    navLinks.forEach(link => {
+        link.style.color = '#2c3e50';
+        link.style.fontWeight = '600';
+
+        if(link.innerText === current) {
+            link.style.color = '#2c7a5e';
+            link.style.fontWeight = '800';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
